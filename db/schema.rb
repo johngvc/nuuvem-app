@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_184444) do
+ActiveRecord::Schema.define(version: 2022_10_03_023356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,47 @@ ActiveRecord::Schema.define(version: 2020_03_09_184444) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.bigint "merchant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["merchant_id"], name: "index_items_on_merchant_id"
+  end
+
+  create_table "merchants", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "purchasers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.bigint "purchaser_id", null: false
+    t.bigint "item_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_purchases_on_item_id"
+    t.index ["purchaser_id"], name: "index_purchases_on_purchaser_id"
+  end
+
+  create_table "sales_reports", force: :cascade do |t|
+    t.string "file_name"
+    t.boolean "processed"
+    t.string "last_error"
+    t.binary "file"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,4 +98,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_184444) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "items", "merchants"
+  add_foreign_key "purchases", "items"
+  add_foreign_key "purchases", "purchasers"
 end

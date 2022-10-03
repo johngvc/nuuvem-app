@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    acsv (0.0.1)
     actioncable (6.1.6)
       actionpack (= 6.1.6)
       activesupport (= 6.1.6)
@@ -240,6 +241,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rchardet (1.8.0)
     redis (4.6.0)
     reek (6.1.1)
       kwalify (~> 0.7.0)
@@ -356,6 +358,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acsv
   active_admin_theme (~> 1.1)
   activeadmin (~> 2.13.1)
   activeadmin_addons (~> 1.9.0)
@@ -382,6 +385,7 @@ DEPENDENCIES
   rack-cors (~> 1.1.1)
   rails (~> 6.1.6)
   ransack (~> 3.2.1)
+  rchardet
   reek (~> 6.1.1)
   rspec-json_expectations (~> 2.2.0)
   rspec-rails (~> 5.1.2)
