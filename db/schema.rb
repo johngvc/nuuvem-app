@@ -52,17 +52,20 @@ ActiveRecord::Schema.define(version: 2022_10_03_023356) do
   create_table "purchases", force: :cascade do |t|
     t.bigint "purchaser_id", null: false
     t.bigint "item_id", null: false
+    t.bigint "sales_reports_id", null: false
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_purchases_on_item_id"
     t.index ["purchaser_id"], name: "index_purchases_on_purchaser_id"
+    t.index ["sales_reports_id"], name: "index_purchases_on_sales_reports_id"
   end
 
   create_table "sales_reports", force: :cascade do |t|
     t.string "file_name"
     t.boolean "processed"
     t.string "last_error"
+    t.float "gross_sum"
     t.binary "file"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -101,4 +104,5 @@ ActiveRecord::Schema.define(version: 2022_10_03_023356) do
   add_foreign_key "items", "merchants"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "purchasers"
+  add_foreign_key "purchases", "sales_reports", column: "sales_reports_id"
 end

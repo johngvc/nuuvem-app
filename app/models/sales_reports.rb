@@ -5,15 +5,16 @@
 #  id         :bigint           not null, primary key
 #  file       :binary
 #  file_name  :string
+#  gross_sum  :float
 #  last_error :string
 #  processed  :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class SalesReports < ApplicationRecord
+    has_many :purchases
 
-    after_create do
-        
+    def process
+        SalesReportProcessor.process(self)
     end
-
 end

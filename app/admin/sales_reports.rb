@@ -5,6 +5,7 @@ ActiveAdmin.register SalesReports do
 
   index do
     column :file_name
+    column :gross_sum
 
     column :updated_at
     actions
@@ -20,6 +21,8 @@ ActiveAdmin.register SalesReports do
   show do
     attributes_table do
       row :file_name
+      row :gross_sum
+      row :updated_at
     end
   end
 
@@ -34,7 +37,8 @@ ActiveAdmin.register SalesReports do
       @sales_report[:file] = sales_report_params[:sales_report].read
 
       if @sales_report.save
-        redirect_to admin_sales_report_path(@sales_report)
+        @sales_report.process
+        redirect_to admin_dashboard_path(@sales_report)
       else
         render :new
       end
@@ -49,7 +53,8 @@ ActiveAdmin.register SalesReports do
       @sales_report[:file] = sales_report_params[:sales_report].read
 
       if @sales_report.save
-        redirect_to admin_sales_report_path(@sales_report)
+        @sales_report.process
+        redirect_to admin_dashboard_path(@sales_report)
       else
         render :edit
       end

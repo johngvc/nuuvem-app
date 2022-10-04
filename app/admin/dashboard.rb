@@ -9,21 +9,18 @@ ActiveAdmin.register_page 'Dashboard' do
       end
     end
 
-    def print_stats(relation)
-      total = relation.count
-      this_month = relation.extending(WithStatsScopes).this_month.count
-      para("#{I18n.t('active_admin.total')}: #{total}")
-      para("#{I18n.t('active_admin.this_month')}: #{this_month}")
-    end
-
     columns do
       column do
-        panel I18n.t('activerecord.models.user.other') do
-          print_stats(User)
+        panel I18n.t('active_admin.sales') do
+          para("#{I18n.t('active_admin.total_gross_income')}: #{Purchase.total_gross_income}")
         end
 
-        panel I18n.t('active_admin.charts.sign_ups_per_month') do
-          render 'sign_ups_per_month', { users: User.group_by_month(:created_at).count }
+        panel I18n.t('active_admin.sales_reports_history') do
+          table_for SalesReports.last(10) do
+            column :file_name
+            column :gross_sum
+            column :updated_at
+          end
         end
       end
     end

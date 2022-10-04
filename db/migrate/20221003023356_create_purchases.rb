@@ -3,6 +3,8 @@ class CreatePurchases < ActiveRecord::Migration[6.1]
     create_table :purchases do |t|
       t.references :purchaser, null: false, foreign_key: true
       t.references :item, null: false, foreign_key: true
+      t.references :sales_reports, null: false, foreign_key: true
+
       t.integer :quantity
 
       t.timestamps

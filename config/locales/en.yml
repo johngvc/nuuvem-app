@@ -1,12 +1,11 @@
 en:
   active_admin:
-    charts:
-      sign_ups_per_month: 'Sign ups per month'
+    total_gross_income: 'total gross income'
     general: General
     overview: Overview
     session_info: Sign in info
-    this_month: This month
-    total: Total
+    sales: Sales
+    sales_reports_history: Sales Report history (Last 10 uploads)
     dashboard_welcome:
       welcome: Welcome to your Admin Backoffice
       call_to_action: Here are some stats!

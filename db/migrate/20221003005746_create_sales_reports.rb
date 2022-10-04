@@ -4,6 +4,7 @@ class CreateSalesReports < ActiveRecord::Migration[6.1]
       t.string :file_name
       t.boolean :processed
       t.string :last_error
+      t.float :gross_sum
       t.binary :file
 
       t.timestamps
