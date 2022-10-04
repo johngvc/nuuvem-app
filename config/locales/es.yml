@@ -1,7 +1,8 @@
 es:
   active_admin:
-    charts:
-      sign_ups_per_month: 'Registros por mes'
+    total_gross_income: ingresos brutos totales
+    sales: Viendas
+    sales_reports_history: Historial de informes de ventas (últimas 10 cargas)
     general: General
     overview: Resumen
     session_info: Información de inicio de sesión

@@ -1,6 +1,6 @@
 en:
   active_admin:
-    total_gross_income: 'total gross income'
+    total_gross_income: total gross income
     general: General
     overview: Overview
     session_info: Sign in info
