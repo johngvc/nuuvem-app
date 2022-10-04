@@ -20,7 +20,7 @@ gem 'strong_migrations', '~> 1.2.0'
 gem 'dotenv-rails', '~> 2.7.6'
 
 # Async worker
-gem 'sidekiq', '~> 6.5.1'
+gem 'sidekiq', '~> 6.5.7'
 
 # Nullify blank strings before saving to db
 gem 'nilify_blanks', '~> 1.4'
