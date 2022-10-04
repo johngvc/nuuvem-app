@@ -8,7 +8,7 @@ gem 'acsv'
 
 # WebServer
 gem 'puma', '~> 5.6'
-gem 'rack', '~> 2.2.3'
+gem 'rack', '~> 2.2.4'
 gem 'rack-attack', '~> 6.6.1'
 gem 'rack-cors', '~> 1.1.1'
 
