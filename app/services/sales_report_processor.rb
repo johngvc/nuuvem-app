@@ -31,12 +31,15 @@ class SalesReportProcessor
       purchase.save!
     end
     sales_report.gross_sum = Purchase.joins(:sales_reports, :item)
-                                     .where(sales_reports_id: sales_report.id).sum('purchases.quantity * items.price')
+                                     .where(sales_reports_id: sales_report.id)
+                                     .sum('purchases.quantity * items.price')
     sales_report.processed = true
     sales_report.last_error = nil
     sales_report.save!
   rescue StandardError => e
     sales_report.last_error = e&.message
     sales_report.save
+
+    Purchase.where(sales_reports: sales_report).delete_all
   end
 end

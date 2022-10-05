@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 class Merchant < ApplicationRecord
-  has_many :items
+  has_many :items, dependent: :destroy
 
   validates :name, presence: { message: 'Merchant name cannot be blank!' }
 end

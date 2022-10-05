@@ -12,7 +12,7 @@
 #  updated_at :datetime         not null
 #
 class SalesReports < ApplicationRecord
-  has_many :purchases
+  has_many :purchases, dependent: :destroy
 
   validate :file_format, if: :file?
   validates :file, presence: { message: 'File cannot be empty!' }
