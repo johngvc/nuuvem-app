@@ -5,7 +5,7 @@ gem 'acsv'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rails', '~> 6.1.6'
 gem 'rchardet'
-gem 'web-console', '3.6.2'
+gem 'web-console', '4.2.0'
 
 # WebServer
 gem 'puma', '~> 5.6'
