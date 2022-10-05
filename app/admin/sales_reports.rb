@@ -43,9 +43,9 @@ ActiveAdmin.register SalesReports do
 
       if @sales_report.save
         @sales_report.process
-        redirect_to admin_dashboard_path(@sales_report)
+        redirect_to admin_dashboard_path(@sales_report), notice: "Sale report successfully created!"
       else
-        render :new
+        redirect_to new_admin_sales_report_path, :flash => { :error => "Sale report update failed. #{@sales_report.errors[:file].first}" }
       end
     end
 
@@ -59,9 +59,9 @@ ActiveAdmin.register SalesReports do
 
       if @sales_report.save
         @sales_report.process
-        redirect_to admin_dashboard_path(@sales_report)
+        redirect_to admin_dashboard_path(@sales_report), notice: "Sale report successfully updated!"
       else
-        render :edit
+        redirect_to edit_admin_sales_report_path, :flash => { :error => "Sale report update failed. #{@sales_report.errors[:file].first}" }
       end
     end
   end
