@@ -10,4 +10,6 @@
 #
 class Merchant < ApplicationRecord
     has_many :items
+
+    validates :name, presence: { message: "Merchant name cannot be blank!"}
 end

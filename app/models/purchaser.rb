@@ -9,4 +9,7 @@
 #
 class Purchaser < ApplicationRecord
     has_many :purchases
+
+  validates :name, presence: { message: "Purchaser name cannot be blank!"}
+
 end

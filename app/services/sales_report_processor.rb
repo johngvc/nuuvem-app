@@ -14,9 +14,9 @@ class SalesReportProcessor
         Purchase.where(sales_reports: sales_report).delete_all
         
         parsed_file.each do |row|
-            purchaser = Purchaser.find_or_create_by(name: row["purchaser name"])
-            merchant = Merchant.find_or_create_by(address: row["merchant address"],name: row["merchant name"])
-            item = Item.find_or_create_by(name: row["item description"], price: row["item price"], merchant: merchant)
+            purchaser = Purchaser.find_or_create_by!(name: row["purchaser name"])
+            merchant = Merchant.find_or_create_by!(address: row["merchant address"],name: row["merchant name"])
+            item = Item.find_or_create_by!(name: row["item description"], price: row["item price"], merchant: merchant)
 
             purchase = Purchase.new()
             purchase.purchaser = purchaser
@@ -30,9 +30,9 @@ class SalesReportProcessor
         sales_report.processed = true
         sales_report.last_error = nil
         sales_report.save!
-    # rescue => error
-    #     sales_report.last_error = error&.message
-    #     sales_report.save
+    rescue => error
+        sales_report.last_error = error&.message
+        sales_report.save
     end
 
 end
