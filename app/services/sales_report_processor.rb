@@ -4,7 +4,6 @@ require 'acsv'
 class SalesReportProcessor
     def self.process(sales_report)
         raise "no sale report provided" if sales_report.nil?
-        
         Purchase.where(sales_reports: sales_report).delete_all
 
         ACSV::CSV.parse(sales_report.file, headers: true).each do |row|
@@ -22,10 +21,11 @@ class SalesReportProcessor
           end
         sales_report.gross_sum = Purchase.joins(:sales_reports, :item).where(sales_reports_id: sales_report.id).sum('purchases.quantity * items.price')
         sales_report.processed = true
+        sales_report.last_error = nil
         sales_report.save!
-    # rescue => error
-    #     sales_report.last_error = error&.message
-    #     sales_report.save
+    rescue => error
+        sales_report.last_error = error&.message
+        sales_report.save
     end
 
 end

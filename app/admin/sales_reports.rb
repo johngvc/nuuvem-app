@@ -4,8 +4,11 @@ ActiveAdmin.register SalesReports do
   config.filters = false
 
   index do
+    id_column
     column :file_name
     column :gross_sum
+    column :last_error
+    column :processed
 
     column :updated_at
     actions
@@ -22,6 +25,8 @@ ActiveAdmin.register SalesReports do
     attributes_table do
       row :file_name
       row :gross_sum
+      row :last_error
+      row :processed
       row :updated_at
     end
   end

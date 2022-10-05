@@ -24,6 +24,8 @@ ActiveAdmin.register_page 'Dashboard' do
           table_for SalesReports.all.order(updated_at: :asc).last(10) do
             column :file_name
             column :gross_sum
+            column :last_error
+            column :processed
             column :updated_at
           end
         end
