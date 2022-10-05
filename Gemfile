@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.7.2'
 
+gem 'acsv'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rails', '~> 6.1.6'
 gem 'rchardet'
-gem 'acsv'
 gem 'web-console', '3.6.2'
 
 # WebServer

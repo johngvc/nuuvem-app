@@ -9,6 +9,6 @@
 #
 FactoryBot.define do
   factory :purchaser do
-    name { "MyString" }
+    name { 'MyString' }
   end
 end

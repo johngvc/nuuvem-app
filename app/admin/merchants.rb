@@ -34,8 +34,8 @@ ActiveAdmin.register Merchant do
 
   form do |f|
     f.inputs do
-        f.input :name
-        f.input :address
+      f.input :name
+      f.input :address
     end
 
     actions

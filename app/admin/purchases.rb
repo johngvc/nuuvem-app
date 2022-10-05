@@ -40,11 +40,11 @@ ActiveAdmin.register Purchase do
 
   form do |f|
     f.inputs do
-        f.input :purchaser
-        f.input :item
-        f.input :quantity
-        f.input :sales_reports
-        f.input :created_at
+      f.input :purchaser
+      f.input :item
+      f.input :quantity
+      f.input :sales_reports
+      f.input :created_at
     end
 
     actions

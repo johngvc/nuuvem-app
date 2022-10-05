@@ -31,7 +31,7 @@ ActiveAdmin.register Purchaser do
 
   form do |f|
     f.inputs do
-        f.input :name
+      f.input :name
     end
 
     actions

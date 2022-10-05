@@ -8,8 +8,7 @@
 #  updated_at :datetime         not null
 #
 class Purchaser < ApplicationRecord
-    has_many :purchases
+  has_many :purchases
 
-  validates :name, presence: { message: "Purchaser name cannot be blank!"}
-
+  validates :name, presence: { message: 'Purchaser name cannot be blank!' }
 end

@@ -27,8 +27,8 @@ class Purchase < ApplicationRecord
   belongs_to :sales_reports
   belongs_to :item
 
-  validates :quantity, presence: { message: "Purchases cannot have empty quantities!"}
-  
+  validates :quantity, presence: { message: 'Purchases cannot have empty quantities!' }
+
   def self.total_gross_income
     Purchase.joins(:item).sum('items.price * purchases.quantity')
   end

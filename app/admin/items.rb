@@ -37,9 +37,9 @@ ActiveAdmin.register Item do
 
   form do |f|
     f.inputs do
-        f.input :name
-        f.input :price
-        f.input :merchant
+      f.input :name
+      f.input :price
+      f.input :merchant
     end
 
     actions
