@@ -1,12 +1,3 @@
-# == Schema Information
-#
-# Table name: purchasers
-#
-#  id         :bigint           not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
 require 'rails_helper'
 
 RSpec.describe Purchaser, type: :model do

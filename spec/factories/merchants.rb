@@ -10,7 +10,7 @@
 #
 FactoryBot.define do
   factory :merchant do
-    name { 'MyString' }
-    address { 'MyString' }
+    name { 'TestMerchant' }
+    address { 'Test address' }
   end
 end

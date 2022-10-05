@@ -89,7 +89,6 @@ GEM
       ruby2_keywords (>= 0.0.2, < 1.0)
     ast (2.4.2)
     bcrypt (3.1.16)
-    bindex (0.8.1)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -343,11 +342,6 @@ GEM
     uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-    web-console (3.6.2)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
-      bindex (>= 0.4.0)
-      railties (>= 5.0)
     webmock (3.14.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -408,7 +402,6 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   strong_migrations (~> 1.2.0)
   tzinfo-data
-  web-console (= 3.6.2)
   webmock (~> 3.14.0)
 
 RUBY VERSION

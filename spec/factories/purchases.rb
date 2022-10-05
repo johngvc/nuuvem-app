@@ -24,8 +24,8 @@
 #
 FactoryBot.define do
   factory :purchase do
-    purchaser { nil }
-    item { nil }
+    purchaser { create(:purchaser) }
+    item { create(:item) }
     quantity { 1 }
   end
 end

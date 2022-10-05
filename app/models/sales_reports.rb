@@ -30,6 +30,6 @@ class SalesReports < ApplicationRecord
   end
 
   def process
-    SalesReportProcessor.process(self)
+    SalesReport::Processor.process(self)
   end
 end

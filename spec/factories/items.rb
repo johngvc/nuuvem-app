@@ -19,8 +19,8 @@
 #
 FactoryBot.define do
   factory :item do
-    name { 'MyString' }
+    name { 'TestItem' }
     price { 1.5 }
-    merchant { nil }
+    merchant { create(:merchant) }
   end
 end

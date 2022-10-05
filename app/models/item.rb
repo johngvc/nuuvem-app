@@ -21,5 +21,5 @@ class Item < ApplicationRecord
   belongs_to :merchant
 
   validates :name, presence: { message: 'Item name cannot be blank!' }
-  validates :price, presence: { message: 'Item must have a price!' }
+  validates :price, presence: { message: 'Item must have a price!' }, numericality: { message: "Price must be a number!"}
 end
