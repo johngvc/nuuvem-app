@@ -4,9 +4,16 @@ require 'acsv'
 class SalesReportProcessor
     def self.process(sales_report)
         raise "no sale report provided" if sales_report.nil?
-        Purchase.where(sales_reports: sales_report).delete_all
 
-        ACSV::CSV.parse(sales_report.file, headers: true).each do |row|
+        parsed_file = ACSV::CSV.parse(sales_report.file, headers: true)
+        
+        file_headers = parsed_file.headers
+        
+        raise "report in invalid or incomplete format" unless (SalesReports::REQUIRED_SALES_REPORT_FILE_COLUMNS - file_headers).empty?
+        
+        Purchase.where(sales_reports: sales_report).delete_all
+        
+        parsed_file.each do |row|
             purchaser = Purchaser.find_or_create_by(name: row["purchaser name"])
             merchant = Merchant.find_or_create_by(address: row["merchant address"],name: row["merchant name"])
             item = Item.find_or_create_by(name: row["item description"], price: row["item price"], merchant: merchant)
@@ -23,9 +30,9 @@ class SalesReportProcessor
         sales_report.processed = true
         sales_report.last_error = nil
         sales_report.save!
-    rescue => error
-        sales_report.last_error = error&.message
-        sales_report.save
+    # rescue => error
+    #     sales_report.last_error = error&.message
+    #     sales_report.save
     end
 
 end

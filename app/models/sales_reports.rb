@@ -15,7 +15,9 @@ class SalesReports < ApplicationRecord
     has_many :purchases
 
     validate :file_format, if: :file?
-    validates :file, presence: true
+    validates :file, presence: { message: "File cannot be empty!"}
+
+    REQUIRED_SALES_REPORT_FILE_COLUMNS = ["purchaser name", "item description", "item price", "purchase count", "merchant address", "merchant name"]
 
     def file_format
         unless valid_extension?(self.file_name)
@@ -25,7 +27,7 @@ class SalesReports < ApplicationRecord
 
     def valid_extension?(filename)
         ext = File.extname(filename)
-        %w( tab csv ).include? ext.downcase
+        %w( .tab .csv ).include? ext.downcase
     end
 
     def process

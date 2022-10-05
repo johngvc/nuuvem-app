@@ -36,16 +36,16 @@ ActiveAdmin.register SalesReports do
     def create
       sales_report_params = permitted_params[:sales_reports]
 
-      @sales_report = SalesReports.create()
+      @sales_report = SalesReports.new()
 
-      @sales_report[:file_name] = sales_report_params[:sales_report].original_filename
-      @sales_report[:file] = sales_report_params[:sales_report].read
+      @sales_report[:file_name] = sales_report_params&.dig(:sales_report)&.original_filename
+      @sales_report[:file] = sales_report_params&.dig(:sales_report)&.read
 
       if @sales_report.save
         @sales_report.process
         redirect_to admin_dashboard_path(@sales_report), notice: "Sale report successfully created!"
       else
-        redirect_to new_admin_sales_report_path, :flash => { :error => "Sale report update failed. #{@sales_report.errors[:file].first}" }
+        redirect_to new_admin_sales_report_path, :flash => { :error => "Sale report creation failed. #{@sales_report.errors[:file].first}" }
       end
     end
 
