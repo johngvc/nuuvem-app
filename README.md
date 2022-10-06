@@ -2,6 +2,19 @@
 
 Name: João Gabriel Vezza Campos
 
+## Project description
+You've received a text file (tab separated) with data describing the company sales. We need a way for this data to be imported to a database to be analyzed later.
+Your job is to create a web interface that accepts file uploads, normalizes the data and stores it in a relational database.
+Your application MUST:
+
+1. Accept (via HTML form) file uploads of TAB-separated files, with the following columns: purchaser name, item description, item price, purchase count, merchant address, merchant name. You can assume the columns will always be in that order, and that there will always be some value in each column, and that there will always be a header row. An example file called example_input.tab is included on this repo.
+2. Interpret (parse) the received file, normalize the data, and save the data correctly in a relational database. Don't forget to model the entities imported from the file data, considering their relationships.
+3. Show the total gross income represented by the sales data after each file upload, and also the total all-time gross income.
+4. Be written in Ruby 2.7 or greater (or, in the language solicited by the job description, if any).
+5. Have good automated tests coverage.
+6. Be simple to configure and execute, running on a Unix-compatible environment (Linux or macOS).
+7. Use only free / open-source language and libraries.
+
 ## Acceptance criteria
 
 * Does the application fulfill the basic requirements?
@@ -187,6 +200,8 @@ Where vN.N.N is placeholder text standing in for the latest version.
 <pre><code>docker-compose up</code></pre>
 
 * Both containers, one with PostgreSQL and another with the main Rails app will be launched
+
+* If necessary the port 8080 of the posgreSQL container will be exposed to connect database managing solutions like DBeaver
 
 * When done shut down the containers by using:
 
