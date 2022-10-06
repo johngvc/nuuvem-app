@@ -213,8 +213,7 @@ Where vN.N.N is placeholder text standing in for the latest version.
 
 * With the container ID run:
 
-<pre><code>
-docker exec -it <CONTAINER_ID> bash
+<pre><code>docker exec -it <CONTAINER_ID> bash
 # example
 docker exec -it 4c1f52876610 bash
 </code></pre>
@@ -223,7 +222,7 @@ docker exec -it 4c1f52876610 bash
 
 <pre><code>bundle exec rspec</code></pre>
 
-* When done shut down the containers by using:
+* When done, shut down the containers by using:
 
 <pre><code>docker-compose down</code></pre>
 
