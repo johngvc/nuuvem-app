@@ -14,8 +14,9 @@
 class SalesReports < ApplicationRecord
   has_many :purchases, dependent: :destroy
 
-  validate :file_format, if: :file?
   validates :file, presence: { message: 'File cannot be empty!' }
+  validates :file_name, presence: { message: 'File name cannot be empty!' }
+  validate :file_format, if: -> { file.present? && file_name.present? }
 
   REQUIRED_SALES_REPORT_FILE_COLUMNS = ['purchaser name', 'item description', 'item price',
                                         'purchase count', 'merchant address', 'merchant name'].freeze
@@ -26,10 +27,10 @@ class SalesReports < ApplicationRecord
 
   def valid_extension?(filename)
     ext = File.extname(filename)
-    %w[.tab .csv].include? ext.downcase
+    %w[.tab .csv].include?(ext.downcase)
   end
 
   def process
-    SalesReport::Processor.process(self)
+    SalesReport::Processor.new.process(self)
   end
 end

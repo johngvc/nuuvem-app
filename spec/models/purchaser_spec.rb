@@ -1,5 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe Purchaser, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { is_expected.to validate_presence_of(:name).with_message("Purchaser name cannot be blank!") }
 end
