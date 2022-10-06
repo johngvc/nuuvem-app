@@ -154,12 +154,12 @@ If you have already set up the Docker repository, jump to step 2.
 
 1. Set up the repository. Find distro-specific instructions in:
 
-<a href="/engine/install/ubuntu/#set-up-the-repository">Ubuntu</a> |
- <a href="/engine/install/centos/#set-up-the-repository">CentOS</a> |
- <a href="/engine/install/debian/#set-up-the-repository">Debian</a> |
- <a href="/engine/install/fedora/#set-up-the-repository">Fedora</a> |
- <a href="/engine/install/rhel/#set-up-the-repository">RHEL</a> |
- <a href="/engine/install/sles/#set-up-the-repository">SLES</a>
+<a href="https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository">Ubuntu</a> |
+ <a href="https://docs.docker.com/engine/install/centos/#set-up-the-repository">CentOS</a> |
+ <a href="https://docs.docker.com/engine/install/debian/#set-up-the-repository">Debian</a> |
+ <a href="https://docs.docker.com/engine/install/fedora/#set-up-the-repository">Fedora</a> |
+ <a href="https://docs.docker.com/engine/install/rhel/#set-up-the-repository">RHEL</a> |
+ <a href="https://docs.docker.com/engine/install/sles/#set-up-the-repository">SLES</a>
 
 2. Update the package index, and install the latest version of Docker Compose:
 
@@ -182,13 +182,51 @@ Where vN.N.N is placeholder text standing in for the latest version.
 
 ### 3. Launch the project using docker-compose tool
 
-The project consists of 2 containers working simultaneously, to start the program we need to run:
-
+* The project consists of 2 containers working simultaneously, to start the program we need to run on the root of the project:
 
 <pre><code>docker-compose up</code></pre>
+
+* Both containers, one with PostgreSQL and another with the main Rails app will be launched
+
+### 4. Access the backoffice utility of the application
+
+* To access the backoffice utility go to http://localhost:3000/admin
+
+<pre><code>I've decided to use the back-office utility to better represent a real world scenario where the providade sales report
+would be used by the back-office to update the database with new data.</code></pre>
+
+### 5. Log in with the mock user
+
+* The credentials will be
+  * Email: admin@example.com
+  * Password: password
+
+- Imagem do login -
+
+### 6. Submit new sale report
+
+- Imagem do dashboard do active admin -
+
+### 6. Submit sales report file
+
+- Imagem do upload do sales report -
+
+### 7. Check if process was successful alongside with report gross sum and total gross income
+
+- Foto do Dashboard -
+
+### 8. Optional - Check the Items, Merchants, Purchasers, Purchases and Sales Reports imported
+
+- Foto do Dashboard apontando para os models -
+
+### 9. Optional - Re upload failed reports and older reports if neccessary
+
+- Foto demonstrando o re upload de algo que falhou -
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 
-# This project used the amazing rails api boilerplate project provided by the good folks at loopstudio
+# This project used the amazing rails api boilerplate project provided by the good folks at loopstudio - more info about the boilerplate below 👇
 
 
 ![image](https://user-images.githubusercontent.com/15303963/84329647-a19cc180-ab5b-11ea-9469-09606895bbbf.png)
