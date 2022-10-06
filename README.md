@@ -188,6 +188,10 @@ Where vN.N.N is placeholder text standing in for the latest version.
 
 * Both containers, one with PostgreSQL and another with the main Rails app will be launched
 
+* When done shut down the containers by using:
+
+<pre><code>docker-compose down</code></pre>
+
 ### 4. Access the backoffice utility of the application
 
 * To access the backoffice utility go to http://localhost:3000/admin
