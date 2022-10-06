@@ -192,8 +192,8 @@ Where vN.N.N is placeholder text standing in for the latest version.
 
 * To access the backoffice utility go to http://localhost:3000/admin
 
-<pre><code>I've decided to use the back-office utility to better represent a real world scenario where the providade sales report
-would be used by the back-office to update the database with new data.</code></pre>
+**I've decided to use the back-office utility to better represent a real world scenario where the providade sales report
+would be used by the back-office to update the database with new data.**
 
 ### 5. Log in with the mock user
 
@@ -201,28 +201,31 @@ would be used by the back-office to update the database with new data.</code></p
   * Email: admin@example.com
   * Password: password
 
-- Imagem do login -
+![image](https://user-images.githubusercontent.com/42398896/194209884-5e16a4f9-5e8c-4a66-bef6-15d3cb6ba5ec.png)
 
 ### 6. Submit new sale report
 
-- Imagem do dashboard do active admin -
+![image](https://user-images.githubusercontent.com/42398896/194210483-e1378a1c-058f-444e-b6d5-ef83f47ac8b9.png)
 
 ### 6. Submit sales report file
 
-- Imagem do upload do sales report -
+![image](https://user-images.githubusercontent.com/42398896/194210553-6e458a0c-23b9-468f-a7ac-ff3ccdcd5076.png)
+
+![image](https://user-images.githubusercontent.com/42398896/194210668-2e6c86d2-12f9-46aa-b919-9384fee97830.png)
 
 ### 7. Check if process was successful alongside with report gross sum and total gross income
 
-- Foto do Dashboard -
+![image](https://user-images.githubusercontent.com/42398896/194210838-e6ce2777-21bd-415c-ad7a-1bc247329011.png)
 
 ### 8. Optional - Check the Items, Merchants, Purchasers, Purchases and Sales Reports imported
 
-- Foto do Dashboard apontando para os models -
+![image](https://user-images.githubusercontent.com/42398896/194210901-54d975f0-3dc6-4d83-b70c-215b098bbbc1.png)
 
 ### 9. Optional - Re upload failed reports and older reports if neccessary
 
-- Foto demonstrando o re upload de algo que falhou -
+![image](https://user-images.githubusercontent.com/42398896/194211300-500f054b-f24d-4f1b-878e-ddfd74fb3e2c.png)
 
+![image](https://user-images.githubusercontent.com/42398896/194211404-e3098ac4-2cb6-4d33-95f5-87d7dffa175e.png)
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
