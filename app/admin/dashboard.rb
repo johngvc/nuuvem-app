@@ -21,7 +21,7 @@ ActiveAdmin.register_page 'Dashboard' do
 
         # TODO: Remove query from here, fix order of reports shown
         panel I18n.t('active_admin.sales_reports_history') do
-          table_for SalesReports.all.order(updated_at: :asc).last(10) do
+          table_for sales_reports do
             column :file_name
             column :gross_sum
             column :last_error
@@ -30,6 +30,16 @@ ActiveAdmin.register_page 'Dashboard' do
           end
         end
       end
+    end
+  end
+
+  controller do
+    helper_method :sales_reports
+
+    private
+
+    def sales_reports
+      SalesReports.all.order(updated_at: :desc).first(10)
     end
   end
 end

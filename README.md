@@ -1,3 +1,65 @@
+# Project Nuuvem app
+
+Name: João Gabriel Vezza Campos
+
+## Acceptance criteria
+
+* Does the application fulfill the basic requirements?
+* Did you document how to configure and run the application?
+* Did you follow closely the project specification?
+* Quality of the code itself, how it's strutured and how it complies with good object-oriented practices;
+* Quality and coverage of unit / funcional / automated tests;
+* Familiarity with the standard libraries of the language and other packages;
+
+## Installing the app
+
+1. Install Docker
+
+### Install Docker Desktop on Windows
+#### Install interactively
+
+* Double-click Docker Desktop Installer.exe to run the installer. If you haven’t already downloaded the installer (Docker Desktop Installer.exe), you can get it from Docker Hub. It typically downloads to your Downloads folder, or you can run it from the recent downloads bar at the bottom of your web browser.
+
+* When prompted, ensure the Use WSL 2 instead of Hyper-V option on the Configuration page is selected or not depending on your choice of backend.
+
+* If your system only supports one of the two options, you will not be able to select which backend to use.
+
+* Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
+
+* When the installation is successful, click Close to complete the installation process.
+
+* If your admin account is different to your user account, you must add the user to the docker-users group. Run Computer Management as an administrator and navigate to Local Users and Groups > Groups > docker-users. Right-click to add the user to the group. Log out and log back in for the changes to take effect.
+
+
+#### Start Docker Desktop
+
+* Docker Desktop does not start automatically after installation. To start Docker Desktop:
+
+* Search for Docker, and select Docker Desktop in the search results.
+
+* search for Docker app
+
+* The Docker menu (<img src="/desktop/install/images/whale-x.svg" alt="whale menu" class="inline">) displays the Docker Subscription Service Agreement window.
+
+Here’s a summary of the key points:
+  * Docker Desktop is free for small businesses (fewer than 250 employees AND less than $10 million in annual revenue), personal use, education, and non-commercial open source projects.
+  * Otherwise, it requires a paid subscription for professional use.
+  * Paid subscriptions are also required for government entities.
+  * The Docker Pro, Team, and Business subscriptions include commercial use of Docker Desktop.
+
+* Select Accept to continue. Docker Desktop starts after you accept the terms.
+
+  **Important**
+  If you do not agree to the terms, the Docker Desktop application will close and you can no longer run Docker Desktop on your machine. You can choose to accept the terms at a later date by opening Docker Desktop.
+
+For more information, see Docker Desktop Subscription Service Agreement. We recommend that you also read the FAQs.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
 ![image](https://user-images.githubusercontent.com/15303963/84329647-a19cc180-ab5b-11ea-9469-09606895bbbf.png)
 
 <div align="center"><strong>Start your next Rails 6 API project in seconds</strong></div>
