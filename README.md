@@ -196,7 +196,7 @@ Where vN.N.N is placeholder text standing in for the latest version.
 
 * To access the backoffice utility go to http://localhost:3000/admin
 
-**I've decided to use the back-office utility to better represent a real world scenario where the providade sales report
+**I've decided to use the back-office utility to better represent a real world scenario where the provided sales report
 would be used by the back-office to update the database with new data.**
 
 ### 5. Log in with the mock user
